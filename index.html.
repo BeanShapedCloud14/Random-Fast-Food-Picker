@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fast Food Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Fast Food Picker</h1>
+    <button onclick="pickRestaurant()">Get My Restaurant</button>
+    <div id="result"></div>
+
+    <script>
+        const restaurants = [
+            "Auntie Anne's", "Burger King", "Charley's Grilled Subs", "Chick-fil-A", "Chipotle Mexican Grill", 
+            "Church's Chicken", "Cinnabon", "Domino's Pizza", "Dunkin Donuts", "Firehouse Subs", 
+            "Five Guys", "Jersey Mike's Subs", "Jimmy John's", "KFC", "Krispy Kreme", "Little Caesars", 
+            "McDonald's", "Panda Express", "Panera Bread", "Papa John's", "Pizza Hut", 
+            "Raising Cane's Chicken Fingers", "Sonic Drive-In", "Starbucks", "Subway", "Taco Bell", 
+            "Wendy's", "Whataburger", "Wingstop"
+        ];
+
+        function pickRestaurant() {
+            const randomIndex = Math.floor(Math.random() * restaurants.length);
+            document.getElementById('result').innerText = `You got: ${restaurants[randomIndex]}`;
+        }
+    </script>
+</body>
+</html>
